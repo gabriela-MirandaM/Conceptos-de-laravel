@@ -6,33 +6,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class Log extends Model
 {
     use HasFactory,SoftDeletes;
-    /** propiedades del modelo
-     * nombre
-     * apellido
-     * email
-     * password
-     * status
-     */
+    protected $table = 'logs';
 
-     use HasFactory;
-
-     protected $fillable =[
-        'nombre',
-        'apellido',
-        'email',
-        'password',
-        'status'
+    protected $fillable =[
+        'user_id',
+        'table_id',
+        'table',
+        'action',
+        'method',
+        'endpoint'
      ];
 
      protected $hidden =[
-        'password',
         'created_at',
         'updated_at',
         'delete_at'
-
      ];
 
 }
