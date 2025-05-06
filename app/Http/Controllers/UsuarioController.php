@@ -224,7 +224,8 @@ class UsuarioController extends Controller
         }
 
         $user->delete();
-        // $user->status = 2;
+       // $user->status = 2;
+        //$user->save();
         return response()->json([
             'message' => 'Usuario Eliminado exitosamente.',
             'data' => $user,
